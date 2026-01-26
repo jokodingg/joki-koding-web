@@ -1,7 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { Star, Quote, CheckCircle } from 'lucide-react';
 
 const Testimonials = () => {
+  const [showAll, setShowAll] = useState(false);
+  
   const testimonialsData = [
     { 
       text: 'Awalnya ragu karena deadline tinggal 3 hari. Ternyata tim Jokoding gercep banget, revisi cuma sekali langsung ACC dosen. Codingannya juga rapi ada komennya, jadi enak pas belajar buat sidang.', 
@@ -42,8 +44,6 @@ const Testimonials = () => {
   ];
 
   return (
-    // FIXED: Changed background to dark (gray-900) so white text is visible
-    // FIXED: Changed py-13 (invalid) to py-16
     <section id="testimonials" className="bg-gray-900 py-16 border-t border-gray-800 relative overflow-hidden">
       
       {/* Background Glow Effects */}
@@ -67,7 +67,9 @@ const Testimonials = () => {
           {testimonialsData.map((t, i) => (
             <div 
               key={i} 
-              className="group relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-900/10 flex flex-col h-full"
+              className={`group relative bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-900/10 flex flex-col h-full ${
+                !showAll && i >= 3 ? 'hidden md:flex' : ''
+              }`}
             >
               <Quote className="absolute top-6 right-6 w-12 h-12 text-gray-700/20 group-hover:text-emerald-500/10 transition-colors duration-300" />
               
@@ -82,7 +84,6 @@ const Testimonials = () => {
               </p>
 
               <div className="flex items-center gap-4 mt-auto border-t border-gray-700 pt-6">
-                {/* FIXED: Typo bg-linaer -> bg-gradient */}
                 <div className="w-12 h-12 rounded-full bg-linear-to-br from-emerald-600 to-emerald-800 flex items-center justify-center text-white font-bold text-lg shadow-inner shrink-0">
                   {t.initials}
                 </div>
@@ -100,6 +101,18 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+
+        {/* Show More Button - Mobile Only */}
+        {!showAll && (
+          <div className="text-center mt-10 md:hidden">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300"
+            >
+              Testimoni Lainnya
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

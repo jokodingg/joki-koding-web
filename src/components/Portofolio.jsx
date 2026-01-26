@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 // 1. Spotlight Card (Kembali ke versi Dark Mode karena di dalam wrapper gelap)
 const SpotlightCard = ({ children, className = "" }) => {
@@ -37,6 +37,8 @@ const SpotlightCard = ({ children, className = "" }) => {
 
 // 2. Main Component
 const Portfolio = () => {
+  const [showAll, setShowAll] = useState(false);
+  
   const projects = [
     {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
@@ -82,6 +84,9 @@ const Portfolio = () => {
     }
   ];
 
+  // Di mobile tampilkan 3, di desktop tampilkan semua
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     // BAGIAN LUAR: Background Terang (#f7f7f2) biar nyambung sama atasnya
     <section id="portfolio" className="bg-[#f7f7f2] py-20 relative">
@@ -104,10 +109,16 @@ const Portfolio = () => {
               </p>
             </div>
 
-            {/* Grid Layout */}
+            {/* Grid Layout - Mobile: show limited, Desktop: show all */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Mobile: show displayedProjects, Desktop: show all */}
               {projects.map((item, i) => (
-                <SpotlightCard key={i} className="h-full flex flex-col group">
+                <SpotlightCard 
+                  key={i} 
+                  className={`h-full flex flex-col group ${
+                    !showAll && i >= 3 ? 'hidden md:flex' : ''
+                  }`}
+                >
                   
                   {/* Image Section */}
                   <div className="relative w-full aspect-video overflow-hidden bg-gray-800 border-b border-gray-700">
@@ -146,9 +157,17 @@ const Portfolio = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - Show "Portfolio Lainnya" only on mobile when not expanded */}
             <div className="text-center mt-16">
-              <button className="px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300">
+              {!showAll && (
+                <button 
+                  onClick={() => setShowAll(true)}
+                  className="md:hidden px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300"
+                >
+                  Portfolio Lainnya
+                </button>
+              )}
+              <button className="hidden md:inline-block px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300">
                 Lihat Project Lainnya
               </button>
             </div>
