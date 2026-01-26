@@ -43,7 +43,7 @@ const Services = () => {
     { 
       icon: <Layout className="w-8 h-8" />, 
       title: 'Web Development', 
-      desc: 'Pembuatan Website Company Profile, Landing Page, hingga Sistem Informasi kompleks dengan React & Next.js.' 
+      desc: 'Pembuatan Website Company Profile, CRUD, hingga website kompleks dengan berbagai tech stack' 
     },
     { 
       icon: <Smartphone className="w-8 h-8" />, 
@@ -52,13 +52,13 @@ const Services = () => {
     },
     { 
       icon: <Cpu className="w-8 h-8" />, 
-      title: 'IoT & Embedded', 
+      title: 'Internet of Things', 
       desc: 'Integrasi hardware ESP32, Arduino, sensor monitoring, dan kontrol aktuator jarak jauh via MQTT.' 
     },
     { 
       icon: <Code className="w-8 h-8" />, 
       title: 'AI & Deep Learning', 
-      desc: 'Implementasi Computer Vision (CNN), deteksi objek, dan prediksi data menggunakan Python/TensorFlow.' 
+      desc: 'Implementasi Computer Vision (CV), pembuatan chatbot (LLM), dan program prediksi dengan ML.' 
     },
     { 
       icon: <Server className="w-8 h-8" />, 
@@ -68,7 +68,7 @@ const Services = () => {
     { 
       icon: <Wifi className="w-8 h-8" />, 
       title: 'Network & Server', 
-      desc: 'Konfigurasi VPS (Ubuntu), setup Docker container, Nginx reverse proxy, dan troubleshooting jaringan.' 
+      desc: 'Konfigurasi VPS (Ubuntu), setup Docker container, dan juga routing GNS & Cisco Packet Tracer.' 
     },
   ];
 
@@ -86,7 +86,7 @@ const Services = () => {
           </h2>
           {/* Teks Deskripsi Abu Gelap */}
           <p className="text-gray-600 text-lg leading-relaxed">
-            Kami menyediakan solusi *end-to-end* untuk kebutuhan digital Anda. Mulai dari perancangan hardware hingga deployment software.
+            Jokoding menyediakan solusi <span className="font-bold">end-to-end</span> untuk kebutuhan Anda. Mulai dari perancangan hardware hingga deployment software.
           </p>
         </div>
 
