@@ -6,40 +6,40 @@ const Testimonials = () => {
   
   const testimonialsData = [
     { 
-      text: 'Awalnya ragu karena deadline tinggal 3 hari. Ternyata tim Jokoding gercep banget, revisi cuma sekali langsung ACC dosen. Codingannya juga rapi ada komennya, jadi enak pas belajar buat sidang.', 
-      name: 'Rian Saputra', 
+      text: 'Awalnya ragu karena deadline tinggal beberapa jam lagi, ternyata tim Jokoding gercep banget. Baru order langsung digarap, udah gitu 1 jam kelar lagi. Jadi bisa ngumpulin sesuai deadline', 
+      name: 'Rian S*****a', 
       role: 'Mahasiswa Teknik Informatika', 
       initials: 'RS' 
     },
     { 
-      text: 'Request fitur IoT custom pake ESP32 + Web Dashboard. Sempet bingung nyari vendor lain pada gak sanggup, disini malah dikasih solusi yang lebih efisien. Recommended parah!', 
-      name: 'Dimas Anggara', 
-      role: 'Developer IoT', 
+      text: 'Request fitur IoT custom pake ESP32 + Web Dashboard. Sempet bingung nyari tempat joki lain pada gak sanggup, di sini malah dikasih solusi yang lebih efisien. Recommended parah!', 
+      name: 'Dimas A****s', 
+      role: 'Mahasiswa Elektro', 
       initials: 'DA' 
     },
     { 
-      text: 'Website Company Profile kantor saya jadi jauh lebih profesional. Load speed cepet, SEO juga naik. Tim supportnya sabar banget ngadepin revisi dari atasan saya. Thanks Jokoding!', 
-      name: 'Sarah Wijaya', 
-      role: 'Manager Marketing', 
-      initials: 'SW' 
+      text: 'Pesen website Company Profile ke tempat joki ternyata bisa dan hasilnya mantep. Load speed cepet, SEO juga naik. Tim supportnya sabar banget ngadepin revisi dari saya wkwkw. Thanks Jokoding!', 
+      name: 'Angga W****a', 
+      role: 'Pengusaha UMKM', 
+      initials: 'AW' 
     },
     { 
-      text: 'Buat skripsi simulasi jaringan pake Cisco Packet Tracer + Laporan. Hasilnya detail banget, topologinya rapi. Ngebantu banget buat saya yang kerja sambil kuliah.', 
-      name: 'Budi Santoso', 
+      text: 'Buat skripsi simulasi jaringan pake Cisco Packet Tracer + Laporan. Hasilnya detail banget, topologinya rapi. Jarang banget nemu tempat joki yg bisa handle task ini', 
+      name: 'Anton S*****o', 
       role: 'Mahasiswa Sistem Komputer', 
-      initials: 'BS' 
+      initials: 'AS' 
     },
     { 
-      text: 'Jasa joki paling amanah yang pernah gw temuin. Privasi aman, harga masuk akal buat kantong mahasiswa, kualitasnya "daging" semua bukan copas asal-asalan.', 
-      name: 'Putri Amelia', 
-      role: 'Mahasiswa Sistem Informasi', 
+      text: 'jasa joki paling amanah yang pernah gw temuin. privasi aman, harga masuk akal buat kantong mahasiswa, kualitasnya "daging" semua bukan copas GPT doang.', 
+      name: 'Putri A****a', 
+      role: 'Mahasiswa Ilmu Komputer', 
       initials: 'PA' 
     },
     { 
-      text: 'Backend API-nya stabil banget. Saya pesen buat integrasi ke aplikasi mobile Flutter saya, dokumentasinya lengkap (Swagger), endpoint-nya kenceng.', 
-      name: 'Kevin Pratama', 
-      role: 'Mobile Dev Freelancer', 
-      initials: 'KP' 
+      text: 'Order website CRUD di sini dan hasilnya gacor banget. Udah gitu dikasih diskon tambahan buat saya pelajar SMK. Pokoknya mantep deh', 
+      name: 'Dafa A*****n', 
+      role: 'Pelajar SMK', 
+      initials: 'DA' 
     },
   ];
 
@@ -58,7 +58,7 @@ const Testimonials = () => {
             Kata Mereka <span className="text-emerald-400">Tentang Kami</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Jangan percaya janji kami, tapi percayalah pada pengalaman mereka yang sudah membuktikannya.
+            Testimoni langsung dari client yang pernah order ke Jokoding. No tipu-tipu ya!
           </p>
         </div>
 
