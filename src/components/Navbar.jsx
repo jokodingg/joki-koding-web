@@ -74,7 +74,7 @@ const Navbar = () => {
               onClick={handleWhatsApp}
               className="bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
-              Konsultasi
+              Order Now
             </button>
           </li>
         </ul>
