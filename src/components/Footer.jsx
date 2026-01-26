@@ -6,7 +6,6 @@ const Footer = () => {
   const waLink = "https://wa.me/6281333543975?text=Halo%20kak%20%F0%9F%91%8B%0ASaya%20mau%20order%20joki%20koding.%0A%0AJenis%20Project%3A%0APenjelasan%20Project%3A%0A%0AMohon%20informasinya%2C%20terima%20kasih%20%F0%9F%99%8F";
 
   return (
-    // BACKGROUND FOOTER: Terang (#f7f7f2)
     <footer id="contact" className="bg-[#f7f7f2] pt-20 pb-10 border-t border-gray-200 relative overflow-hidden">
       
       <div className="container mx-auto px-4 relative z-10">
@@ -21,7 +20,7 @@ const Footer = () => {
               Siap Wujudkan <span className="text-emerald-400">Project Impianmu?</span>
             </h2>
             <p className="text-gray-300 text-lg">
-              Konsultasikan ide liarmu sekarang. Gratis, tanpa komitmen.
+              Konsultasikan ide kreatifmu sekarang. Gratis, tanpa komitmen.
             </p>
           </div>
           
@@ -49,24 +48,17 @@ const Footer = () => {
                  alt="Logo Jokoding" 
                  className="h-10 w-auto opacity-90" 
                />
-               <span className="text-xl font-bold text-gray-900 tracking-wide">Jokoding</span>
             </div>
 
             <p className="text-gray-600 leading-relaxed text-sm">
-              Software House berbasis di Surabaya. Menggabungkan inovasi mahasiswa ITS dengan standar industri.
+              Software House berbasis di Semarang. Dari mahasiswa untuk mahasiswa.
             </p>
             
-            <div className="flex items-center gap-3 text-gray-600 text-sm">
-              <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
-                 <MapPin size={16} />
-              </div>
-              <span>Kampus ITS Sukolilo, Surabaya</span>
-            </div>
             <div className="flex gap-3 pt-2">
-              <SocialLink href="https://www.instagram.com/thenextllmgod/" icon={<Instagram size={18} />} />
-              <SocialLink href="https://www.linkedin.com/in/irfanqs/" icon={<Linkedin size={18} />} />
-              <SocialLink href="https://wa.me/6281234567890" icon={<MessageCircle size={18} />} />
-              <SocialLink href="#" icon={<Mail size={18} />} />
+              <SocialLink href="https://www.instagram.com/jokodingg/" icon={<Instagram size={18} />} />
+              {/* <SocialLink href="https://www.linkedin.com/in/irfanqs/" icon={<Linkedin size={18} />} /> */}
+              <SocialLink href="https://wa.me/6281333543975" icon={<MessageCircle size={18} />} />
+              <SocialLink href="mailto:jokoding@gmail.com" icon={<Mail size={18} />} />
             </div>
           </div>
 
@@ -104,10 +96,7 @@ const Footer = () => {
 
         {/* === SECTION 3: COPYRIGHT (TERANG) === */}
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>&copy; {currentYear} Jokoding / Nexus Lab. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Made with <span className="text-red-500 animate-pulse">❤</span> by Mahasiswa ITS
-          </p>
+          <p>&copy; {currentYear} Jokoding. All rights reserved.</p>
         </div>
 
       </div>
