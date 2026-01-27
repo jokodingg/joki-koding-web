@@ -1,5 +1,13 @@
 import { useRef, useState } from "react";
 
+// Import gambar portfolio
+import project1 from '../assets/portfolio/project1.jpg';
+import project2 from '../assets/portfolio/project2.jpg';
+import project3 from '../assets/portfolio/project3.jpg';
+import project4 from '../assets/portfolio/project4.jpg';
+import project5 from '../assets/portfolio/project5.jpg';
+import project6 from '../assets/portfolio/project6.jpg';
+
 // 1. Spotlight Card (Kembali ke versi Dark Mode karena di dalam wrapper gelap)
 const SpotlightCard = ({ children, className = "" }) => {
   const divRef = useRef(null);
@@ -41,46 +49,46 @@ const Portfolio = () => {
   
   const projects = [
     {
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-      title: "Corporate Dashboard",
-      type: "Web App",
-      desc: "Sistem manajemen data internal dengan analitik real-time dan reporting otomatis.",
-      tech: ["React", "Laravel", "MySQL"]
+      image: project1,
+      title: "Tomato Ripeness Classifier",
+      type: "AI Computer Vision",
+      desc: "Mengklasifikasikan kematangan tomat berdasarkan warna.",
+      tech: ["Python", "OpenCV", "Matplotlib"]
     },
     {
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=800&auto=format&fit=crop",
-      title: "TokoSehat.id",
+      image: project2,
+      title: "Website Jual Beli Gas LPG",
       type: "E-Commerce",
-      desc: "Marketplace kesehatan terintegrasi dengan payment gateway Midtrans dan RajaOngkir.",
-      tech: ["Next.js", "PostgreSQL", "Prisma"]
+      desc: "Website CRUD penjualan gas LPG yang terintegrasi dengan payment gateway.",
+      tech: ["PHP Native", "MySQL", "Midtrans"]
     },
     {
-      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
-      title: "Smart Garden IoT",
+      image: project3,
+      title: "Website Jual Beli Kebaya",
+      type: "E-Commerce",
+      desc: "Website jual beli kebaya dilengkapi dengan dashboard analitik data.",
+      tech: ["Laravel", "Vue.js", "MySQL"]
+    },
+    {
+      image: project4,
+      title: "IoT Monitoring Banjir",
       type: "Internet of Things",
-      desc: "Sistem monitoring kelembaban tanah dan penyiraman otomatis berbasis ESP32.",
-      tech: ["C++", "Blynk", "ESP32"]
+      desc: "Alat IoT untuk memonitoring ketinggian banjir dengan sensor jarak.",
+      tech: ["Arduino", "PlatformIO", "Tinkercad"]
     },
     {
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-      title: "Fregie AI",
-      type: "Computer Vision",
-      desc: "Deteksi kualitas buah dan sayur menggunakan Convolutional Neural Network (CNN).",
-      tech: ["Python", "TensorFlow", "FastAPI"]
+      image: project5, 
+      title: "Career AI",
+      type: "AI LLM",
+      desc: "Chatbot untuk membantu konsultasi tentang karier dan prospek kerja. ",
+      tech: ["Python", "LangChain", "RAG"]
     },
     {
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop", 
-      title: "Sistem Skripsi",
-      type: "Information System",
-      desc: "Platform bimbingan skripsi online, logbook, dan penjadwalan sidang otomatis.",
-      tech: ["PHP Native", "Bootstrap", "MySQL"]
-    },
-    {
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-      title: "Security Pentest",
-      type: "Cyber Security",
-      desc: "Analisis celah keamanan jaringan lokal menggunakan Kali Linux dan Metasploit.",
-      tech: ["Linux", "Wireshark", "Python"]
+      image: project6,
+      title: "Dipscript AI",
+      type: "n8n Automation",
+      desc: "Bot Telegram yang berfungsi untuk mengkoreksi dan memperbaiki skripsi.",
+      tech: ["n8n", "Telegram Bot", "Python"]
     }
   ];
 
@@ -167,9 +175,9 @@ const Portfolio = () => {
                   Portfolio Lainnya
                 </button>
               )}
-              <button className="hidden md:inline-block px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300">
+              {/* <button className="hidden md:inline-block px-8 py-3 rounded-full border border-gray-600 text-gray-300 font-semibold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300">
                 Lihat Project Lainnya
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
