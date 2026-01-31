@@ -6,20 +6,22 @@ const Footer = () => {
   const waLink = "https://wa.me/6281333543975?text=Halo%20kak%20%F0%9F%91%8B%0ASaya%20mau%20order%20joki%20koding.%0A%0AJenis%20Project%3A%0APenjelasan%20Project%3A%0A%0AMohon%20informasinya%2C%20terima%20kasih%20%F0%9F%99%8F";
 
   return (
-    <footer id="contact" className="bg-[#f7f7f2] pt-20 pb-10 border-t border-gray-200 relative overflow-hidden">
+    <footer id="contact" className="bg-gray-950 pt-20 pb-10 border-t border-amber-900/20 relative overflow-hidden">
       
       <div className="container mx-auto px-4 relative z-10">
         
-        <div className="bg-linear-to-r from-gray-900 to-emerald-950 border border-gray-800 rounded-3xl p-8 md:p-12 mb-20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-2xl">
+        {/* CTA Banner */}
+        <div className="bg-gradient-to-r from-gray-900 via-amber-950/30 to-gray-900 border border-amber-900/30 rounded-3xl p-8 md:p-12 mb-20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-2xl">
           
           {/* Efek Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/30 transition-all duration-500"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-amber-500/30 transition-all duration-500"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2"></div>
           
           <div className="relative z-10 text-center md:text-left">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
-              Siap Wujudkan <span className="text-emerald-400">Project Impianmu?</span>
+              Siap Wujudkan <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">Project Impianmu?</span>
             </h2>
-            <p className="text-gray-300 text-lg">
+            <p className="text-gray-400 text-lg">
               Konsultasikan ide kreatifmu sekarang. Gratis, tanpa komitmen.
             </p>
           </div>
@@ -29,7 +31,7 @@ const Footer = () => {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-400 hover:text-gray-900 transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2 cursor-pointer"
+              className="bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:from-amber-400 hover:to-amber-500 transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-500/25 flex items-center gap-2 cursor-pointer"
             >
               Hubungi Kami <ArrowRight className="w-5 h-5" />
             </a>
@@ -37,7 +39,7 @@ const Footer = () => {
         </div>
 
 
-        {/* === SECTION 2: MAIN FOOTER LINKS (JADI TERANG) === */}
+        {/* Main Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           {/* COL 1: Brand Info */}
@@ -50,13 +52,12 @@ const Footer = () => {
                />
             </div>
 
-            <p className="text-gray-600 leading-relaxed text-sm">
+            <p className="text-gray-400 leading-relaxed text-sm">
               Software House berbasis di Semarang. Dari mahasiswa untuk mahasiswa.
             </p>
             
             <div className="flex gap-3 pt-2">
               <SocialLink href="https://www.instagram.com/jokodingg/" icon={<Instagram size={18} />} />
-              {/* <SocialLink href="https://www.linkedin.com/in/irfanqs/" icon={<Linkedin size={18} />} /> */}
               <SocialLink href="https://wa.me/6281333543975" icon={<MessageCircle size={18} />} />
               <SocialLink href="mailto:jokoding@gmail.com" icon={<Mail size={18} />} />
             </div>
@@ -94,8 +95,8 @@ const Footer = () => {
           />
         </div>
 
-        {/* === SECTION 3: COPYRIGHT (TERANG) === */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        {/* Copyright */}
+        <div className="border-t border-amber-900/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>&copy; {currentYear} Jokoding. All rights reserved.</p>
         </div>
 
@@ -104,22 +105,18 @@ const Footer = () => {
   );
 };
 
-// --- Sub-Components (Light Mode) ---
-
 const FooterLinks = ({ title, items }) => (
   <div>
-    {/* Judul Hitam */}
-    <h4 className="text-gray-900 font-bold text-lg mb-6">{title}</h4>
+    <h4 className="text-white font-bold text-lg mb-6">{title}</h4>
     <ul className="space-y-4">
       {items.map((item, idx) => (
         <li key={idx}>
           <a 
             href={item.href} 
-            // Link Abu -> Hover Hijau
-            className="text-gray-600 hover:text-emerald-600 transition-colors duration-300 flex items-center gap-1 group w-fit text-sm"
+            className="text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-1 group w-fit text-sm"
           >
             <span className="w-0 overflow-hidden group-hover:w-4 transition-all duration-300 flex items-center opacity-0 group-hover:opacity-100">
-              <ArrowRight size={14} className="mr-1 text-emerald-600" />
+              <ArrowRight size={14} className="mr-1 text-amber-400" />
             </span>
             {item.label}
           </a>
@@ -132,8 +129,7 @@ const FooterLinks = ({ title, items }) => (
 const SocialLink = ({ href, icon }) => (
   <a 
     href={href} 
-    // Tombol Putih border Abu -> Hover Hijau
-    className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all duration-300 transform hover:-translate-y-1 shadow-sm"
+    className="w-10 h-10 rounded-full bg-gray-900 border border-amber-900/30 flex items-center justify-center text-gray-400 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600 hover:text-gray-900 hover:border-transparent transition-all duration-300 transform hover:-translate-y-1 shadow-sm"
   >
     {icon}
   </a>

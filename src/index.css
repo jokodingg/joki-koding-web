@@ -4,6 +4,32 @@ html, body {
   overscroll-behavior: none;
 }
 
-:root{
+:root {
   --primary: rgba(247, 247, 242, 0.98);
+  --gold-light: #F5D77A;
+  --gold: #D4AF37;
+  --gold-dark: #B8860B;
+}
+
+/* Elegant Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F5D77A 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold Shimmer Animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #D4AF37 0%, #F5D77A 25%, #D4AF37 50%, #F5D77A 75%, #D4AF37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
 }

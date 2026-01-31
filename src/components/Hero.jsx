@@ -1,17 +1,18 @@
-import React from 'react';
-import RotatingText from './reactbits/RotatingText';
+import { ArrowRight, CheckCircle, Code, Smartphone, Cpu } from 'lucide-react';
 
 const Hero = () => {
   
   const handleWhatsApp = () => {
     const phoneNumber = "6281333543975"; 
-    const message = `Halo kak 👋
-                    Saya mau order joki koding.
+    const message = `Halo Jokoding,
 
-                    Jenis Project:
-                    Penjelasan Project:
+Saya tertarik untuk konsultasi pembuatan website:
 
-                    Mohon informasinya, terima kasih 🙏🏻`;
+Jenis Website:
+Detail Kebutuhan:
+Budget:
+
+Mohon informasi lebih lanjut. Terima kasih.`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -22,118 +23,108 @@ const Hero = () => {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
 
+  const services = [
+    { icon: Code, text: "Website Company Profile" },
+    { icon: Smartphone, text: "Landing Page" },
+    { icon: Cpu, text: "Web Application" },
+  ];
+
   return (
-    <section id="home" className="min-h-screen relative bg-[#f7f7f2] overflow-hidden flex items-center justify-center pt-20 md:pt-0">
-
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-size[24px_24px] pointer-events-none"></div>
+    <section id="home" className="min-h-screen relative bg-gradient-to-b from-amber-50 via-white to-amber-50/50 overflow-hidden flex items-center">
       
-      <div className="absolute inset-0 bg-linear-to-t from-[#f7f7f2] via-transparent to-[#f7f7f2]/50 pointer-events-none"></div>
+      {/* Background Elements - Soft Gold Glow */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-200/40 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-amber-100/50 rounded-full blur-[100px]"></div>
+      </div>
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.05)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-        
-        <div className="bg-gray-900 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-800 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
           
-          <div className="absolute top-0 right-0 w-125 h-125 bg-emerald-600/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center relative z-10">
-            
-            {/* KOLOM KIRI (TEKS) */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1 px-4 md:px-10 lg:px-0">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-                Bikin Tugasmu
-                <span className="mt-5 block w-full">
-                  <RotatingText
-                    texts={['Auto Kelar', 'Bebas Error', 'Langsung Jalan', 'Dapet Nilai A']}
-                    // Pastikan background RotatingText nyambung (pake transparent atau gray-900)
-                    mainClassName="px-3 sm:px-4 md:px-5 bg-emerald-500 text-gray-900 overflow-hidden py-1 sm:py-2 md:py-3 justify-center lg:justify-center rounded-xl font-mono md:text-3xl lg:text-5xl font-bold"
-                    staggerFrom={"last"}
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={2000}
-                  />
-                </span>
-              </h1>
-              
-              <p className="text-lg text-gray-400 mb-10 max-w-xl leading-relaxed">
-                Stuck sama kodingan? Deadline mepet? Serahin ke Jokoding! <br />
-                Free konsul, privasi aman, full support sampai program jalan.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
-                
-                <button 
-                  onClick={handleWhatsApp}
-                  className="cursor-pointer px-8 py-4 rounded-full bg-emerald-600 text-white font-bold text-sm tracking-wide uppercase shadow-[0_0_20px_rgba(5,150,105,0.4)] hover:bg-emerald-500 hover:shadow-[0_0_30px_rgba(5,150,105,0.6)] transition-all transform hover:-translate-y-1"
-                >
-                  Joki Sekarang!
-                </button>
-                
-                <button 
-                  onClick={() => handleScroll('portfolio')}
-                  className="cursor-pointer px-8 py-4 rounded-full border border-gray-700 text-gray-300 font-bold text-sm tracking-wide uppercase hover:bg-gray-800 hover:text-white hover:border-gray-600 transition-all"
-                >
-                  Lihat Portofolio
-                </button>
-
-              </div>
-
-              <div className="mt-12 grid grid-cols-3 gap-6 w-full max-w-md divide-x divide-gray-700 border-t border-gray-800 pt-8">
-                <StatItem number="42+" label="Project Kelar" />
-                <StatItem number="100%" label="Client Puas" />
-                <StatItem number="24/7" label="Support" />
-              </div>
-            </div>
-
-            {/* KOLOM KANAN (CODE WINDOW) */}
-            <div className="hidden lg:flex justify-center order-1 lg:order-2 relative">
-              <CodeWindow />
-            </div>
-
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-700 text-sm font-medium mb-8">
+            <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
+            Jasa Pembuatan Website Profesional
           </div>
+
+          {/* Main Headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            Wujudkan Website
+            <span className="block mt-2 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 bg-clip-text text-transparent">
+              Impian Bisnis Anda
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Kami membantu UMKM, startup, dan profesional memiliki website modern yang 
+            meningkatkan kredibilitas dan konversi bisnis. Desain menarik, loading cepat, SEO friendly.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <button 
+              onClick={handleWhatsApp}
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/30 hover:shadow-amber-600/40"
+            >
+              Konsultasi Gratis
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <button 
+              onClick={() => handleScroll('portfolio')}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-amber-300 hover:border-amber-400 text-gray-800 font-semibold rounded-xl transition-all duration-300 hover:bg-amber-50"
+            >
+              Lihat Portfolio
+            </button>
+          </div>
+
+          {/* Services Pills */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {services.map((service, i) => (
+              <div 
+                key={i}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-amber-200 text-gray-700 text-sm shadow-sm"
+              >
+                <service.icon className="w-4 h-4 text-amber-600" />
+                {service.text}
+              </div>
+            ))}
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-3xl mx-auto pt-10 border-t border-amber-200">
+            <TrustItem number="50+" label="Project Delivered" />
+            <TrustItem number="30+" label="Happy Clients" />
+            <TrustItem number="99%" label="Success Rate" />
+            <TrustItem number="24/7" label="Support" />
+          </div>
+
+          {/* Client Proof */}
+          <div className="mt-12 flex flex-col items-center gap-4">
+            <div className="flex items-center gap-2 text-gray-500 text-sm">
+              <CheckCircle className="w-4 h-4 text-emerald-500" />
+              Dipercaya oleh startup, UMKM, dan enterprise
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-const CodeWindow = () => (
-  <div className="bg-[#0f172a] rounded-xl p-6 w-full max-w-md shadow-2xl border border-gray-700 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-    <div className="flex gap-2 mb-4 border-b border-gray-800 pb-4">
-      <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
-      <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-      <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
-    </div>
-    <pre className="text-sm font-mono text-gray-300 overflow-x-auto custom-scrollbar">
-      <code>
-        <span className="text-purple-400">if</span> <span className="text-yellow-400">(</span><span className="text-blue-400">kodingan</span>.<span className="text-red-400">error</span><span className="text-yellow-400">)</span> {'{\n'}
-        <span className="pl-4 text-blue-300">stress</span> <span className="text-purple-400">=</span> <span className="text-orange-400">False</span>{'\n'}
-        <span className="pl-4 text-blue-400">jokoding</span>.<span className="text-yellow-400">order</span>();{'\n'}
-        {'}\n\n'}
-        <span className="text-purple-400">return</span> <span className="text-purple-400">{'{'}</span>{'\n'}
-        <span className="pl-4 text-blue-300">program:</span> <span className="text-emerald-400">"lancar"</span>,{'\n'}
-        <span className="pl-4 text-blue-300">deadline:</span> <span className="text-yellow-400">"aman"</span>,{'\n'}
-        <span className="pl-4 text-blue-300">harga:</span> <span className="text-blue-400">"hemat"</span>{'\n'}
-        <span className="text-purple-400">{'}'}</span>;
-      </code>
-    </pre>
-  </div>
-);
-
-const StatItem = ({ number, label }) => (
-  <div className="text-center px-2">
-    <div className="text-2xl md:text-3xl font-bold text-white mb-1">{number}</div>
+const TrustItem = ({ number, label }) => (
+  <div className="text-center">
+    <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-600 to-amber-700 bg-clip-text text-transparent mb-1">{number}</div>
     <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">{label}</div>
   </div>
 );

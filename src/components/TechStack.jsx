@@ -23,13 +23,13 @@ export default function TechStack() {
   ];
 
   return (
-    <section className="bg-[#f7f7f2] py-20 overflow-hidden border-t border-gray-200">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-size[24px_24px] pointer-events-none"></div>
+    <section className="bg-white py-20 overflow-hidden border-t border-amber-100">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-size[24px_24px] pointer-events-none"></div>
       <div className="container mx-auto px-4 mb-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Tech <span className="text-emerald-600">Stack</span>
+          Tech <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Stack</span>
         </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
           Tools modern standar industri yang kami gunakan untuk performa maksimal.
         </p>
       </div>
@@ -38,14 +38,14 @@ export default function TechStack() {
         autoFill
         speed={40}
         gradient={true}
-        gradientColor="#f7f7f2" 
+        gradientColor="#ffffff" 
         gradientWidth={100}
         className="py-4 overflow-hidden! [&_.rfm-marquee]:items-center"
       >
         {allTech.map((item, index) => (
           <div
             key={index}
-            className="group mx-3 flex items-center justify-center rounded-2xl border border-gray-200 bg-white px-6 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_4px_20px_rgba(16,185,129,0.15)]"
+            className="group mx-3 flex items-center justify-center rounded-2xl border border-amber-200 bg-amber-50/50 px-6 py-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-100"
             style={{ minWidth: '100px', minHeight: '80px' }} 
           >
             <img
