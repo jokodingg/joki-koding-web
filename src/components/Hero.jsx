@@ -46,7 +46,7 @@ Mohon informasi lebih lanjut. Terima kasih.`;
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.05)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-32 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           
           {/* Badge */}
