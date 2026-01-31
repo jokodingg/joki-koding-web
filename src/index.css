@@ -2,18 +2,19 @@
 
 html, body {
   overscroll-behavior: none;
+  background-color: #fffbf5;
 }
 
 :root {
-  --primary: rgba(247, 247, 242, 0.98);
-  --gold-light: #F5D77A;
-  --gold: #D4AF37;
-  --gold-dark: #B8860B;
+  --primary: #fffbf5;
+  --gold-light: #fbbf24;
+  --gold: #f59e0b;
+  --gold-dark: #d97706;
 }
 
 /* Elegant Gold Gradient Text */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #F5D77A 0%, #D4AF37 50%, #B8860B 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -26,7 +27,7 @@ html, body {
 }
 
 .gold-shimmer {
-  background: linear-gradient(90deg, #D4AF37 0%, #F5D77A 25%, #D4AF37 50%, #F5D77A 75%, #D4AF37 100%);
+  background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 25%, #f59e0b 50%, #fbbf24 75%, #f59e0b 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

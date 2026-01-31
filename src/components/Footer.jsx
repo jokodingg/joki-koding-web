@@ -1,27 +1,27 @@
 import React from 'react';
-import { Instagram, Linkedin, MessageCircle, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const waLink = "https://wa.me/6281333543975?text=Halo%20kak%20%F0%9F%91%8B%0ASaya%20mau%20order%20joki%20koding.%0A%0AJenis%20Project%3A%0APenjelasan%20Project%3A%0A%0AMohon%20informasinya%2C%20terima%20kasih%20%F0%9F%99%8F";
 
   return (
-    <footer id="contact" className="bg-gray-950 pt-20 pb-10 border-t border-amber-900/20 relative overflow-hidden">
+    <footer id="contact" className="bg-gradient-to-b from-amber-50 to-white pt-20 pb-10 border-t border-amber-200 relative overflow-hidden">
       
       <div className="container mx-auto px-4 relative z-10">
         
         {/* CTA Banner */}
-        <div className="bg-gradient-to-r from-gray-900 via-amber-950/30 to-gray-900 border border-amber-900/30 rounded-3xl p-8 md:p-12 mb-20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-2xl">
+        <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded-3xl p-8 md:p-12 mb-20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden group shadow-2xl shadow-amber-200">
           
           {/* Efek Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-amber-500/30 transition-all duration-500"></div>
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-white/30 transition-all duration-500"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-400/30 rounded-full blur-[60px] translate-y-1/2 -translate-x-1/2"></div>
           
           <div className="relative z-10 text-center md:text-left">
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
-              Siap Wujudkan <span className="bg-gradient-to-r from-amber-400 to-amber-500 bg-clip-text text-transparent">Project Impianmu?</span>
+              Siap Wujudkan <span className="text-amber-100">Project Impianmu?</span>
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-amber-100 text-lg">
               Konsultasikan ide kreatifmu sekarang. Gratis, tanpa komitmen.
             </p>
           </div>
@@ -31,7 +31,7 @@ const Footer = () => {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-amber-500 to-amber-600 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:from-amber-400 hover:to-amber-500 transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-500/25 flex items-center gap-2 cursor-pointer"
+              className="bg-white text-amber-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-50 transition-all transform hover:-translate-y-1 shadow-lg flex items-center gap-2 cursor-pointer"
             >
               Hubungi Kami <ArrowRight className="w-5 h-5" />
             </a>
@@ -48,11 +48,11 @@ const Footer = () => {
                <img 
                  src="/logo-jokoding-only.png" 
                  alt="Logo Jokoding" 
-                 className="h-10 w-auto opacity-90" 
+                 className="h-10 w-auto" 
                />
             </div>
 
-            <p className="text-gray-400 leading-relaxed text-sm">
+            <p className="text-gray-600 leading-relaxed text-sm">
               Software House berbasis di Semarang. Dari mahasiswa untuk mahasiswa.
             </p>
             
@@ -96,7 +96,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-amber-900/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <div className="border-t border-amber-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>&copy; {currentYear} Jokoding. All rights reserved.</p>
         </div>
 
@@ -107,16 +107,16 @@ const Footer = () => {
 
 const FooterLinks = ({ title, items }) => (
   <div>
-    <h4 className="text-white font-bold text-lg mb-6">{title}</h4>
+    <h4 className="text-gray-900 font-bold text-lg mb-6">{title}</h4>
     <ul className="space-y-4">
       {items.map((item, idx) => (
         <li key={idx}>
           <a 
             href={item.href} 
-            className="text-gray-400 hover:text-amber-400 transition-colors duration-300 flex items-center gap-1 group w-fit text-sm"
+            className="text-gray-600 hover:text-amber-600 transition-colors duration-300 flex items-center gap-1 group w-fit text-sm"
           >
             <span className="w-0 overflow-hidden group-hover:w-4 transition-all duration-300 flex items-center opacity-0 group-hover:opacity-100">
-              <ArrowRight size={14} className="mr-1 text-amber-400" />
+              <ArrowRight size={14} className="mr-1 text-amber-600" />
             </span>
             {item.label}
           </a>
@@ -129,7 +129,7 @@ const FooterLinks = ({ title, items }) => (
 const SocialLink = ({ href, icon }) => (
   <a 
     href={href} 
-    className="w-10 h-10 rounded-full bg-gray-900 border border-amber-900/30 flex items-center justify-center text-gray-400 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600 hover:text-gray-900 hover:border-transparent transition-all duration-300 transform hover:-translate-y-1 shadow-sm"
+    className="w-10 h-10 rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-600 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600 hover:text-white hover:border-transparent transition-all duration-300 transform hover:-translate-y-1 shadow-sm"
   >
     {icon}
   </a>
