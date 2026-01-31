@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Star, Quote, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Star, Quote, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
-  const [showAll, setShowAll] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   const testimonialsData = [
     { 
@@ -43,6 +43,22 @@ const Testimonials = () => {
     },
   ];
 
+  // Auto slide setiap 4 detik
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonialsData.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [testimonialsData.length]);
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonialsData.length);
+  };
+
   return (
     <section id="testimonials" className="bg-amber-50 py-16 relative overflow-hidden">
       
@@ -53,7 +69,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Kata Mereka <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Tentang Kami</span>
           </h2>
@@ -62,57 +78,84 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonialsData.map((t, i) => (
+        {/* Carousel Container */}
+        <div className="relative max-w-4xl mx-auto">
+          
+          {/* Navigation Buttons */}
+          <button 
+            onClick={goToPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-amber-200 flex items-center justify-center text-amber-600 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600 hover:text-white hover:border-transparent transition-all duration-300 shadow-lg"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+          
+          <button 
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-amber-200 flex items-center justify-center text-amber-600 hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600 hover:text-white hover:border-transparent transition-all duration-300 shadow-lg"
+          >
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+
+          {/* Slides */}
+          <div className="overflow-hidden">
             <div 
-              key={i} 
-              className={`group relative bg-white p-8 rounded-2xl border border-amber-200 hover:border-amber-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-amber-100 flex flex-col h-full ${
-                !showAll && i >= 3 ? 'hidden md:flex' : ''
-              }`}
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              <Quote className="absolute top-6 right-6 w-12 h-12 text-amber-100 group-hover:text-amber-200 transition-colors duration-300" />
-              
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, index) => (
-                  <Star key={index} className="w-4 h-4 text-amber-500 fill-amber-500" />
-                ))}
-              </div>
+              {testimonialsData.map((t, i) => (
+                <div 
+                  key={i} 
+                  className="w-full flex-shrink-0 px-4"
+                >
+                  <div className="relative bg-white p-8 md:p-10 rounded-2xl border border-amber-200 shadow-xl shadow-amber-100/50">
+                    <Quote className="absolute top-6 right-6 w-12 h-12 text-amber-100" />
+                    
+                    <div className="flex gap-1 mb-6">
+                      {[...Array(5)].map((_, index) => (
+                        <Star key={index} className="w-5 h-5 text-amber-500 fill-amber-500" />
+                      ))}
+                    </div>
 
-              <p className="text-gray-700 leading-relaxed mb-8 grow italic relative z-10">
-                "{t.text}"
-              </p>
+                    <p className="text-gray-700 text-lg leading-relaxed mb-8 italic relative z-10">
+                      "{t.text}"
+                    </p>
 
-              <div className="flex items-center gap-4 mt-auto border-t border-amber-100 pt-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-amber-200 shrink-0">
-                  {t.initials}
+                    <div className="flex items-center gap-4 border-t border-amber-100 pt-6">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-amber-200 shrink-0">
+                        {t.initials}
+                      </div>
+                      <div>
+                        <h4 className="text-gray-900 font-bold flex items-center gap-2">
+                          {t.name}
+                          <CheckCircle className="w-4 h-4 text-emerald-500" /> 
+                        </h4>
+                        <span className="text-sm text-gray-500 font-medium">
+                          {t.role}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-gray-900 font-bold text-sm flex items-center gap-2">
-                    {t.name}
-                    <CheckCircle className="w-3 h-3 text-emerald-500" /> 
-                  </h4>
-                  <span className="text-xs text-gray-500 font-medium uppercase tracking-wide">
-                    {t.role}
-                  </span>
-                </div>
-              </div>
-
+              ))}
             </div>
-          ))}
-        </div>
-
-        {/* Show More Button - Mobile Only */}
-        {!showAll && (
-          <div className="text-center mt-10 md:hidden">
-            <button 
-              onClick={() => setShowAll(true)}
-              className="px-8 py-3 rounded-full border-2 border-amber-400 text-amber-700 font-semibold hover:bg-gradient-to-r hover:from-amber-500 hover:to-amber-600 hover:text-white hover:border-transparent transition-all duration-300"
-            >
-              Testimoni Lainnya
-            </button>
           </div>
-        )}
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonialsData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  currentIndex === index 
+                    ? 'bg-amber-500 w-8' 
+                    : 'bg-amber-200 hover:bg-amber-300'
+                }`}
+              />
+            ))}
+          </div>
+
+        </div>
 
       </div>
     </section>

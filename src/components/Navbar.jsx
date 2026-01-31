@@ -25,7 +25,7 @@ const Navbar = () => {
     window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
   };
 
-  const navLinks = ['home', 'services', 'portfolio', 'testimonials', 'contact'];
+  const navLinks = ['home', 'services', 'portfolio', 'testimonials'];
 
   return (
     <nav 
