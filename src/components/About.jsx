@@ -25,7 +25,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="bg-gradient-to-b from-amber-50/50 to-white py-20 border-t border-amber-100 relative overflow-hidden">
+    <section id="about" className="bg-white py-20 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-100/30 rounded-full blur-[100px] pointer-events-none"></div>
       

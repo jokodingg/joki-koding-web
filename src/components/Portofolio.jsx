@@ -89,7 +89,7 @@ const Portfolio = () => {
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section id="portfolio" className="bg-white py-20 relative">
+    <section id="portfolio" className="bg-white py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Wrapper dengan border gold elegan */}

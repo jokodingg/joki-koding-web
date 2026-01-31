@@ -32,60 +32,64 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="bg-white py-20 border-t border-amber-100 relative overflow-hidden">
+    <section id="faq" className="bg-amber-50 py-20 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-100/40 rounded-full blur-[100px] pointer-events-none"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-700 text-sm font-medium mb-6">
-            <HelpCircle className="w-4 h-4" />
-            Pertanyaan Umum
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          
+          {/* Left - Header */}
+          <div className="lg:sticky lg:top-24">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-700 text-sm font-medium mb-6">
+              <HelpCircle className="w-4 h-4" />
+              Pertanyaan Umum
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              Frequently Asked <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Questions</span>
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Jawaban untuk pertanyaan yang sering ditanyakan oleh client kami. Masih ada pertanyaan lain? Langsung hubungi kami via WhatsApp.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Frequently Asked <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Questions</span>
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Jawaban untuk pertanyaan yang sering ditanyakan oleh client kami.
-          </p>
-        </div>
 
-        {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index}
-              className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                openIndex === index 
-                  ? 'border-amber-400 bg-amber-50/50 shadow-lg shadow-amber-100' 
-                  : 'border-amber-200 bg-white hover:border-amber-300'
-              }`}
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left"
-              >
-                <span className={`font-semibold pr-4 ${openIndex === index ? 'text-amber-700' : 'text-gray-900'}`}>
-                  {faq.question}
-                </span>
-                <ChevronDown 
-                  className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180 text-amber-600' : 'text-gray-400'
-                  }`} 
-                />
-              </button>
+          {/* Right - FAQ Accordion */}
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
               <div 
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
+                key={index}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                  openIndex === index 
+                    ? 'border-amber-400 bg-amber-50/50 shadow-lg shadow-amber-100' 
+                    : 'border-amber-200 bg-white hover:border-amber-300'
                 }`}
               >
-                <p className="px-6 pb-5 text-gray-600 leading-relaxed">
-                  {faq.answer}
-                </p>
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <span className={`font-semibold pr-4 ${openIndex === index ? 'text-amber-700' : 'text-gray-900'}`}>
+                    {faq.question}
+                  </span>
+                  <ChevronDown 
+                    className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
+                      openIndex === index ? 'rotate-180 text-amber-600' : 'text-gray-400'
+                    }`} 
+                  />
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openIndex === index ? 'max-h-96' : 'max-h-0'
+                  }`}
+                >
+                  <p className="px-6 pb-5 text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

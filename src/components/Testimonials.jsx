@@ -44,7 +44,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="bg-gradient-to-b from-white to-amber-50/50 py-16 border-t border-amber-100 relative overflow-hidden">
+    <section id="testimonials" className="bg-amber-50 py-16 relative overflow-hidden">
       
       {/* Background Glow Effects */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-amber-100/50 rounded-full blur-[100px] pointer-events-none"></div>

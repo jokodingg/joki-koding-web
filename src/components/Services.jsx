@@ -67,7 +67,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="relative bg-gradient-to-b from-amber-50/50 to-white py-24 overflow-hidden border-t border-amber-100">
+    <section id="services" className="relative bg-amber-50 py-24 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
       

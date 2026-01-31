@@ -34,7 +34,7 @@ Mohon informasi lebih lanjut. Terima kasih.`;
   ];
 
   return (
-    <section id="home" className="min-h-screen relative bg-gradient-to-b from-amber-50 via-white to-amber-50/50 overflow-hidden flex items-center">
+    <section id="home" className="min-h-screen relative bg-amber-50 overflow-hidden flex items-center">
       
       {/* Background Elements - Soft Gold Glow */}
       <div className="absolute inset-0">
