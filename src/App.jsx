@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
 import Services from './components/Services';
+import Pricing from './components/Pricing';
 import Portfolio from './components/Portofolio';
 import Testimonials from './components/Testimonials';
 import About from './components/About';
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <TechStack />
       <Services />
+      <Pricing />
       <Portfolio />
       <Testimonials />
       <About />
