@@ -5,6 +5,12 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    allowedHosts: ['localhost', '.ngrok.io', '.ngrok-free.app', 'limberly-supercandid-caprice.ngrok-free.dev']
+    allowedHosts: ['localhost', '.ngrok.io', '.ngrok-free.app', 'limberly-supercandid-caprice.ngrok-free.dev'],
+    watch: {
+      usePolling: true,
+    },
+    hmr: {
+      overlay: true
+    }
   }
 })

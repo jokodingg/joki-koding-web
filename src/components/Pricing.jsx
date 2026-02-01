@@ -11,15 +11,13 @@ const Pricing = () => {
       plans: [
         {
           name: 'Starter',
-          price: 'Rp 1.500.000',
+          price: 'Rp 700.000',
           features: [
-            'Free Domain (.com)',
-            'Shared Hosting (6 Bulan)',
+            'Free Domain (.com/.id)',
+            'Free Hosting (Selamanya)',
             'Desain Responsif (Mobile & Desktop)',
             '1 Halaman Landing Page (scroll panjang)',
-            '1 Email Bisnis',
-            '1 GB Disk Storage',
-            'Free SSL',
+            'SEO On-Page Basic',
             '1x Revisi Gratis',
             'Garansi Maintenance 15 Hari',
             'Video Panduan Akses Website'
@@ -28,30 +26,28 @@ const Pricing = () => {
         },
         {
           name: 'Growth',
-          price: 'Rp 2.750.000',
+          price: 'Rp 1.200.000',
+          originalPrice: 'Rp 1.500.000',
           features: [
             'Semua yang ada di Starter, plus:',
-            'Hosting 1 Tahun',
             'Desain Visual Lebih Kompleks (CTA, Form, Galeri)',
             'Direct WhatsApp Chat',
-            '2 Email Bisnis',
-            '10 GB Disk Storage',
+            'Website Dinamis (Bisa diubah kontennya sendiri)',
             '3x Revisi Gratis',
-            'Free SSL',
-            'SEO On-Page Basic',
-            'Garansi Maintenance 1 Bulan'
+            'Garansi Maintenance 1 Bulan',
+            'Video Panduan Akses & Update Website Sendiri'
           ],
           popular: true
         },
         {
           name: 'Ultimate',
-          price: 'Rp 3.750.000',
+          price: 'Rp 2.000.000',
           features: [
             'Semua yang ada di Growth, plus:',
-            'Up to 2 Halaman Tambahan (About / FAQ / Blog Preview)',
             'Request Fitur Khusus (Popup, Accordion, Pricing Table, dll)',
+            'Chatbot AI Sederhana (FAQ Otomatis)',
             'Desain Interaktif (Animated Scroll, Parallax, dll)',
-            'Speed Optimization (Lazy Load + Caching Tools)',
+            'Speed Optimization',
             '5x Revisi Gratis',
             'Garansi Maintenance 1,5 Bulan'
           ],
@@ -60,18 +56,17 @@ const Pricing = () => {
       ]
     },
     'company-profile': {
-      title: 'Web Company Profile',
+      title: 'Web Company Profile UMKM',
       plans: [
         {
           name: 'Starter',
-          price: 'Rp 2.500.000',
+          price: 'Rp 1.800.000',
           features: [
-            'Free Domain (.com)',
-            'Shared Hosting (6 Bulan)',
+            'Free Domain (.com/.id)',
+            'Free Hosting Selamanya',
             'Desain Responsif (Mobile & Desktop)',
             'Hingga 5 Halaman (Home, About, Services, Portfolio, Contact)',
             '2 Email Bisnis',
-            '5 GB Disk Storage',
             'Free SSL',
             'Form Kontak',
             '2x Revisi Gratis',
@@ -81,15 +76,15 @@ const Pricing = () => {
         },
         {
           name: 'Growth',
-          price: 'Rp 4.500.000',
+          price: 'Rp 2.300.000',
+          originalPrice: 'Rp 3.000.000',
           features: [
             'Semua yang ada di Starter, plus:',
-            'Hosting 1 Tahun',
             'Hingga 8 Halaman',
             'Galeri / Portfolio Interaktif',
+            'Multi-language Support',
             'Blog Section (5 artikel)',
             '5 Email Bisnis',
-            '20 GB Disk Storage',
             'WhatsApp Integration',
             'Google Maps Integration',
             'SEO On-Page',
@@ -100,80 +95,17 @@ const Pricing = () => {
         },
         {
           name: 'Ultimate',
-          price: 'Rp 6.500.000',
+          price: 'Rp 4.500.000',
           features: [
             'Semua yang ada di Growth, plus:',
             'Unlimited Halaman',
             'CMS untuk Update Konten Sendiri',
-            'Multi-language Support',
             'Advanced Animation & Interaction',
             '10 Email Bisnis',
-            '50 GB Disk Storage',
             'Speed Optimization Premium',
             'Backup Otomatis',
             '5x Revisi Gratis',
             'Garansi Maintenance 3 Bulan'
-          ],
-          popular: false
-        }
-      ]
-    },
-    'web-app': {
-      title: 'Web Application',
-      plans: [
-        {
-          name: 'Starter',
-          price: 'Rp 5.000.000',
-          features: [
-            'Custom Domain',
-            'VPS Hosting (3 Bulan)',
-            'Desain Responsif',
-            'User Authentication (Login/Register)',
-            'CRUD Basic (3-5 Tabel)',
-            'Database MySQL/PostgreSQL',
-            'REST API',
-            'Admin Dashboard Basic',
-            '2x Revisi Gratis',
-            'Garansi Maintenance 1 Bulan',
-            'Dokumentasi API'
-          ],
-          popular: false
-        },
-        {
-          name: 'Growth',
-          price: 'Rp 10.000.000',
-          features: [
-            'Semua yang ada di Starter, plus:',
-            'VPS Hosting (6 Bulan)',
-            'Role Management (Admin, User, dll)',
-            'CRUD Advanced (10+ Tabel)',
-            'File Upload System',
-            'Export Data (Excel, PDF)',
-            'Email Notification',
-            'Search & Filter Advanced',
-            'Reporting Dashboard',
-            '4x Revisi Gratis',
-            'Garansi Maintenance 2 Bulan',
-            'Training Penggunaan System'
-          ],
-          popular: true
-        },
-        {
-          name: 'Ultimate',
-          price: 'Rp 18.000.000',
-          features: [
-            'Semua yang ada di Growth, plus:',
-            'VPS Hosting (1 Tahun)',
-            'Multi-tenant System',
-            'Real-time Notification',
-            'Payment Gateway Integration',
-            'Advanced Security (2FA, Encryption)',
-            'API Integration (Third-party)',
-            'Mobile Responsive PWA',
-            'Performance Optimization',
-            'Unlimited Revisi (dalam periode development)',
-            'Garansi Maintenance 6 Bulan',
-            'Priority Support'
           ],
           popular: false
         }
@@ -203,6 +135,7 @@ const Pricing = () => {
         {
           name: 'Growth',
           price: 'Rp 7.500.000',
+          originalPrice: 'Rp 9.000.000',
           features: [
             'Semua yang ada di Starter, plus:',
             'Hosting 1 Tahun',
@@ -267,6 +200,7 @@ const Pricing = () => {
         {
           name: 'Growth',
           price: 'Rp 10.000.000',
+          originalPrice: 'Rp 12.500.000',
           features: [
             'Semua yang ada di Starter, plus:',
             'VPS Hosting (6 Bulan)',
@@ -310,15 +244,150 @@ const Pricing = () => {
           popular: false
         }
       ]
+    },
+    'bot-whatsapp': {
+      title: 'Chatbot WhatsApp AI',
+      plans: [
+        {
+          name: 'Starter',
+          price: 'Rp 3.000.000',
+          features: [
+            'Free WA Business API Setup',
+            'VPS Hosting (3 Bulan)',
+            'Desain Responsif',
+            'User Authentication (Login/Register)',
+            'CRUD Basic (3-5 Tabel)',
+            'Database MySQL/PostgreSQL',
+            'REST API',
+            'Admin Dashboard Basic',
+            '2x Revisi Gratis',
+            'Garansi Maintenance 1 Bulan',
+            'Dokumentasi API'
+          ],
+          popular: false
+        },
+        {
+          name: 'Growth',
+          price: 'Rp 10.000.000',
+          originalPrice: 'Rp 12.000.000',
+          features: [
+            'Semua yang ada di Starter, plus:',
+            'VPS Hosting (6 Bulan)',
+            'Role Management (Admin, User, dll)',
+            'CRUD Advanced (10+ Tabel)',
+            'File Upload System',
+            'Export Data (Excel, PDF)',
+            'Email Notification',
+            'Search & Filter Advanced',
+            'Reporting Dashboard',
+            '4x Revisi Gratis',
+            'Garansi Maintenance 2 Bulan',
+            'Training Penggunaan System'
+          ],
+          popular: true
+        },
+        {
+          name: 'Ultimate',
+          price: 'Rp 18.000.000',
+          features: [
+            'Semua yang ada di Growth, plus:',
+            'VPS Hosting (1 Tahun)',
+            'Multi-tenant System',
+            'Real-time Notification',
+            'Payment Gateway Integration',
+            'Advanced Security (2FA, Encryption)',
+            'API Integration (Third-party)',
+            'Mobile Responsive PWA',
+            'Performance Optimization',
+            'Unlimited Revisi (dalam periode development)',
+            'Garansi Maintenance 6 Bulan',
+            'Priority Support'
+          ],
+          popular: false
+        }
+      ]
+    },
+    'bot-whatsapp': {
+      title: 'Chatbot WhatsApp AI',
+      plans: [
+        {
+          name: 'Starter',
+          price: 'Rp 3.000.000',
+          features: [
+            'Integrasi WhatsApp Business API',
+            'AI Response (GPT-based)',
+            'Auto Reply 24/7',
+            'FAQ Otomatis (hingga 20 Q&A)',
+            'Welcome Message',
+            'Keyword Detection',
+            'Admin Dashboard (Web)',
+            'Laporan Chat Harian',
+            'Multi Admin (2 Akun)',
+            'Broadcast Message (hingga 100 kontak/hari)',
+            '2x Revisi Gratis',
+            'Garansi Maintenance 1 Bulan',
+            'Training Penggunaan Dashboard'
+          ],
+          popular: false
+        },
+        {
+          name: 'Growth',
+          price: 'Rp 6.000.000',
+          originalPrice: 'Rp 7.500.000',
+          features: [
+            'Semua yang ada di Starter, plus:',
+            'Custom AI Training (sesuai bisnis Anda)',
+            'FAQ Unlimited',
+            'Customer Database & CRM',
+            'Lead Tracking & Scoring',
+            'Auto Follow-up System',
+            'Chatbot Flow Builder (Drag & Drop)',
+            'Multi Admin (5 Akun)',
+            'Broadcast Unlimited',
+            'Broadcast Scheduling',
+            'Chat Analytics & Report',
+            'Export Data (Excel/CSV)',
+            'WhatsApp Button & Quick Reply',
+            '4x Revisi Gratis',
+            'Garansi Maintenance 2 Bulan',
+            'Priority Support'
+          ],
+          popular: true
+        },
+        {
+          name: 'Ultimate',
+          price: 'Rp 12.000.000',
+          features: [
+            'Semua yang ada di Growth, plus:',
+            'Multi WhatsApp Number (3 Nomor)',
+            'AI Voice Message (Text-to-Speech)',
+            'Sentiment Analysis (AI untuk deteksi mood customer)',
+            'Auto Assignment (Chat otomatis ke admin tertentu)',
+            'Integration E-Commerce (Katalog Produk)',
+            'Payment Gateway Integration',
+            'Order Tracking via WhatsApp',
+            'Multi-language Support',
+            'Chatbot API Access',
+            'Webhook Integration',
+            'Advanced Analytics Dashboard',
+            'Unlimited Admin',
+            'White Label (Custom Branding)',
+            'Unlimited Revisi (dalam periode development)',
+            'Garansi Maintenance 6 Bulan',
+            'Priority Support 24/7'
+          ],
+          popular: false
+        }
+      ]
     }
   };
 
   const tabs = [
     { id: 'landing-page', label: 'Landing Page' },
-    { id: 'company-profile', label: 'Web Company Profile' },
-    { id: 'web-app', label: 'Web Application' },
+    { id: 'company-profile', label: 'Web Company Profile UMKM' },
     { id: 'e-commerce', label: 'Web Toko Online' },
-    { id: 'pos-kasir', label: 'Web Kasir / POS' }
+    { id: 'pos-kasir', label: 'Web Kasir / POS' },
+    { id: 'bot-whatsapp', label: 'Chatbot WhatsApp AI'}
   ];
 
   const currentData = pricingData[activeTab];
@@ -357,11 +426,11 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-start">
           {currentData.plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
+              className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl flex flex-col ${
                 plan.popular
                   ? 'border-emerald-600 shadow-lg shadow-emerald-600/10'
                   : 'border-gray-200 hover:border-emerald-300'
@@ -380,11 +449,16 @@ const Pricing = () => {
 
               {/* Price */}
               <div className="mb-6">
+                {plan.originalPrice && (
+                  <div className="mb-2">
+                    <span className="text-lg text-gray-400 line-through">{plan.originalPrice}</span>
+                  </div>
+                )}
                 <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
               </div>
 
               {/* Features */}
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
