@@ -4,14 +4,13 @@ import RotatingText from './reactbits/RotatingText';
 const Hero = () => {
   
   const handleWhatsApp = () => {
-    const phoneNumber = "6281333543975"; 
-    const message = `Halo kak 👋
-                    Saya mau order joki koding.
+    const phoneNumber = "6287784724501"; 
+    const message = `Halo kak, saya mau order/konsultasi joki koding.
 
                     Jenis Project:
                     Penjelasan Project:
 
-                    Mohon informasinya, terima kasih 🙏🏻`;
+                    Mohon informasinya, terima kasih!`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };

@@ -23,8 +23,13 @@ const Navbar = () => {
 
   // Logic tombol WA
   const handleWhatsApp = () => {
-    const phone = "6281779592283"; // GANTI NOMOR WA DISINI
-    const text = encodeURIComponent("Halo Jokoding, mau tanya pricelist joki dong...");
+    const phone = "6287784724501";
+    const text = encodeURIComponent(`Halo kak, saya mau order/konsultasi joki koding.
+
+                    Jenis Project:
+                    Penjelasan Project:
+
+                    Mohon informasinya, terima kasih!`);
     window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
   };
 

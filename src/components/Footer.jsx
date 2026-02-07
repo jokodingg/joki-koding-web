@@ -3,7 +3,7 @@ import { Instagram, Linkedin, MessageCircle, Mail, MapPin, ArrowRight } from 'lu
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const waLink = "https://wa.me/6281333543975?text=Halo%20kak%20%F0%9F%91%8B%0ASaya%20mau%20order%20joki%20koding.%0A%0AJenis%20Project%3A%0APenjelasan%20Project%3A%0A%0AMohon%20informasinya%2C%20terima%20kasih%20%F0%9F%99%8F";
+  const waLink = "https://wa.me/6287784724501?text=Halo%20kak%2C%20saya%20mau%20order%2Fkonsultasi%20joki%20koding.%0A%0AJenis%20Project%3A%0APenjelasan%20Project%3A%0A%0AMohon%20informasinya%2C%20terima%20kasih%21";
 
   return (
     <footer id="contact" className="bg-[#f7f7f2] pt-20 pb-10 border-t border-gray-200 relative overflow-hidden">
