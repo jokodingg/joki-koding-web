@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle, Code, Smartphone, Cpu } from 'lucide-react';
 const Hero = () => {
   
   const handleWhatsApp = () => {
-    const phoneNumber = "6281333543975"; 
+    const phoneNumber = "6287784724501"; 
     const message = `Halo Jokoding,
 
 Saya tertarik untuk konsultasi pembuatan website:

@@ -252,68 +252,6 @@ const Pricing = () => {
           name: 'Starter',
           price: 'Rp 3.000.000',
           features: [
-            'Free WA Business API Setup',
-            'VPS Hosting (3 Bulan)',
-            'Desain Responsif',
-            'User Authentication (Login/Register)',
-            'CRUD Basic (3-5 Tabel)',
-            'Database MySQL/PostgreSQL',
-            'REST API',
-            'Admin Dashboard Basic',
-            '2x Revisi Gratis',
-            'Garansi Maintenance 1 Bulan',
-            'Dokumentasi API'
-          ],
-          popular: false
-        },
-        {
-          name: 'Growth',
-          price: 'Rp 10.000.000',
-          originalPrice: 'Rp 12.000.000',
-          features: [
-            'Semua yang ada di Starter, plus:',
-            'VPS Hosting (6 Bulan)',
-            'Role Management (Admin, User, dll)',
-            'CRUD Advanced (10+ Tabel)',
-            'File Upload System',
-            'Export Data (Excel, PDF)',
-            'Email Notification',
-            'Search & Filter Advanced',
-            'Reporting Dashboard',
-            '4x Revisi Gratis',
-            'Garansi Maintenance 2 Bulan',
-            'Training Penggunaan System'
-          ],
-          popular: true
-        },
-        {
-          name: 'Ultimate',
-          price: 'Rp 18.000.000',
-          features: [
-            'Semua yang ada di Growth, plus:',
-            'VPS Hosting (1 Tahun)',
-            'Multi-tenant System',
-            'Real-time Notification',
-            'Payment Gateway Integration',
-            'Advanced Security (2FA, Encryption)',
-            'API Integration (Third-party)',
-            'Mobile Responsive PWA',
-            'Performance Optimization',
-            'Unlimited Revisi (dalam periode development)',
-            'Garansi Maintenance 6 Bulan',
-            'Priority Support'
-          ],
-          popular: false
-        }
-      ]
-    },
-    'bot-whatsapp': {
-      title: 'Chatbot WhatsApp AI',
-      plans: [
-        {
-          name: 'Starter',
-          price: 'Rp 3.000.000',
-          features: [
             'Integrasi WhatsApp Business API',
             'AI Response (GPT-based)',
             'Auto Reply 24/7',
@@ -470,7 +408,7 @@ const Pricing = () => {
               {/* CTA Button */}
               <button
                 onClick={() => {
-                  const phone = "6281333543975";
+                  const phone = "6287784724501";
                   const text = encodeURIComponent(`Halo Jokoding, saya tertarik dengan paket ${plan.name} - ${currentData.title}`);
                   window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
                 }}
