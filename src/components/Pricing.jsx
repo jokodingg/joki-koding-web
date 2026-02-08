@@ -332,14 +332,14 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="relative bg-[#f7f7f2] py-24 overflow-hidden border-t border-gray-200">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(249,224,130,0.25),_transparent_55%)] pointer-events-none"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Pricelist <span className="text-emerald-600">Layanan</span>
+            Pricelist <span className="text-amber-600">Layanan</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
             Solusi lengkap untuk bantu bisnis anda eksis di dunia digital!
@@ -354,8 +354,8 @@ const Pricing = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
                 activeTab === tab.id
-                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+                  ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/30'
+                  : 'bg-white text-amber-700 hover:bg-amber-50 border border-amber-200'
               }`}
             >
               {tab.label}
@@ -370,14 +370,14 @@ const Pricing = () => {
               key={index}
               className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl flex flex-col ${
                 plan.popular
-                  ? 'border-emerald-600 shadow-lg shadow-emerald-600/10'
-                  : 'border-gray-200 hover:border-emerald-300'
+                  ? 'border-amber-500 shadow-lg shadow-amber-500/10'
+                  : 'border-amber-200 hover:border-amber-300'
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg">
-                  <Star className="w-4 h-4 fill-white" />
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg shadow-amber-500/40">
+                  <Star className="w-4 h-4 fill-amber-100" />
                   Most Popular
                 </div>
               )}
@@ -399,7 +399,7 @@ const Pricing = () => {
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                    <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -414,8 +414,8 @@ const Pricing = () => {
                 }}
                 className={`w-full py-3.5 rounded-xl font-bold transition-all duration-300 ${
                   plan.popular
-                    ? 'bg-emerald-600 text-white hover:bg-emerald-700 shadow-lg shadow-emerald-600/30'
-                    : 'bg-gray-900 text-white hover:bg-gray-800'
+                    ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/30 hover:from-amber-600 hover:to-amber-700'
+                    : 'bg-amber-500/90 text-white hover:bg-amber-600 shadow-lg shadow-amber-500/20'
                 }`}
               >
                 Order Sekarang
@@ -427,7 +427,7 @@ const Pricing = () => {
         {/* Additional Info */}
         <div className="text-center mt-12">
           <p className="text-gray-500 text-sm">
-            Butuh paket custom? <a href="#contact" className="text-emerald-600 font-semibold hover:underline">Hubungi kami</a> untuk penawaran khusus.
+            Butuh paket custom? <a href="#contact" className="text-amber-600 font-semibold hover:text-amber-700 hover:underline">Hubungi kami</a> untuk penawaran khusus.
           </p>
         </div>
 

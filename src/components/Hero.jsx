@@ -38,14 +38,11 @@ Mohon informasi lebih lanjut. Terima kasih.`;
       
       {/* Background Elements - Soft Gold Glow */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-200/40 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-200/30 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/4 left-1/5 w-96 h-96 bg-amber-200/40 rounded-full blur-[140px]"></div>
+        <div className="absolute bottom-1/5 right-1/4 w-80 h-80 bg-amber-300/30 rounded-full blur-[120px]"></div>
         <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-amber-100/50 rounded-full blur-[100px]"></div>
       </div>
       
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.05)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 md:pt-40 md:pb-32 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           
@@ -109,9 +106,9 @@ Mohon informasi lebih lanjut. Terima kasih.`;
           </div>
 
           {/* Client Proof */}
-          <div className="mt-12 flex flex-col items-center gap-4">
+            <div className="mt-12 flex flex-col items-center gap-4">
             <div className="flex items-center gap-2 text-gray-500 text-sm">
-              <CheckCircle className="w-4 h-4 text-emerald-500" />
+              <CheckCircle className="w-4 h-4 text-amber-500" />
               Dipercaya oleh startup, UMKM, dan enterprise
             </div>
           </div>

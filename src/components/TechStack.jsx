@@ -23,8 +23,7 @@ export default function TechStack() {
   ];
 
   return (
-    <section className="bg-white py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-size[24px_24px] pointer-events-none"></div>
+    <section className="relative bg-white py-20 overflow-hidden">
       <div className="container mx-auto px-4 mb-12 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Tech <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">Stack</span>
