@@ -77,7 +77,7 @@ const Pricing = () => {
         {
           name: 'Growth',
           price: 'Rp 2.300.000',
-          originalPrice: 'Rp 3.000.000',
+          originalPrice: 'Rp 3.500.000',
           features: [
             'Semua yang ada di Starter, plus:',
             'Hingga 8 Halaman',
@@ -116,7 +116,7 @@ const Pricing = () => {
       plans: [
         {
           name: 'Starter',
-          price: 'Rp 4.000.000',
+          price: 'Rp 2.700.000',
           features: [
             'Free Domain (.com)',
             'Shared Hosting (6 Bulan)',
@@ -134,8 +134,8 @@ const Pricing = () => {
         },
         {
           name: 'Growth',
-          price: 'Rp 7.500.000',
-          originalPrice: 'Rp 9.000.000',
+          price: 'Rp 3.500.000',
+          originalPrice: 'Rp 4.000.000',
           features: [
             'Semua yang ada di Starter, plus:',
             'Hosting 1 Tahun',
@@ -155,7 +155,7 @@ const Pricing = () => {
         },
         {
           name: 'Ultimate',
-          price: 'Rp 12.000.000',
+          price: 'Rp 5.000.000',
           features: [
             'Semua yang ada di Growth, plus:',
             'VPS Hosting (1 Tahun)',
@@ -180,7 +180,7 @@ const Pricing = () => {
       plans: [
         {
           name: 'Starter',
-          price: 'Rp 6.000.000',
+          price: 'Rp 2.700.000',
           features: [
             'Custom Domain',
             'VPS Hosting (3 Bulan)',
@@ -199,8 +199,8 @@ const Pricing = () => {
         },
         {
           name: 'Growth',
-          price: 'Rp 10.000.000',
-          originalPrice: 'Rp 12.500.000',
+          price: 'Rp 3.500.000',
+          originalPrice: 'Rp 4.500.000',
           features: [
             'Semua yang ada di Starter, plus:',
             'VPS Hosting (6 Bulan)',
@@ -222,7 +222,7 @@ const Pricing = () => {
         },
         {
           name: 'Ultimate',
-          price: 'Rp 16.000.000',
+          price: 'Rp 5.000.000',
           features: [
             'Semua yang ada di Growth, plus:',
             'VPS Hosting (1 Tahun)',
@@ -250,7 +250,7 @@ const Pricing = () => {
       plans: [
         {
           name: 'Starter',
-          price: 'Rp 3.000.000',
+          price: 'Rp 1.500.000',
           features: [
             'Integrasi WhatsApp Business API',
             'AI Response (GPT-based)',
@@ -270,8 +270,8 @@ const Pricing = () => {
         },
         {
           name: 'Growth',
-          price: 'Rp 6.000.000',
-          originalPrice: 'Rp 7.500.000',
+          price: 'Rp 2.300.000',
+          originalPrice: 'Rp 3.000.000',
           features: [
             'Semua yang ada di Starter, plus:',
             'Custom AI Training (sesuai bisnis Anda)',
@@ -294,7 +294,7 @@ const Pricing = () => {
         },
         {
           name: 'Ultimate',
-          price: 'Rp 12.000.000',
+          price: 'Rp 4.500.000',
           features: [
             'Semua yang ada di Growth, plus:',
             'Multi WhatsApp Number (3 Nomor)',
