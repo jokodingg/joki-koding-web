@@ -1,4 +1,5 @@
 // src/App.jsx
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TechStack from './components/TechStack';
@@ -19,6 +20,7 @@ function App() {
       <Testimonials />
       <FAQ />
       <Footer />
+      <Analytics />
     </>
   )
 }
