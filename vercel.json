@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/terms-and-conditions",
+      "destination": "https://docs.google.com/document/d/1HX9qzpHU94Cl1zJvJuzgHU8nmqqvvQlZNrGfqX2Da5U/edit?usp=sharing",
+      "permanent": true
+    }
+  ]
+}
