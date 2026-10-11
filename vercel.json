@@ -5,5 +5,15 @@
       "destination": "https://docs.google.com/document/d/1HX9qzpHU94Cl1zJvJuzgHU8nmqqvvQlZNrGfqX2Da5U/edit?usp=sharing",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/website-portfolio",
+      "destination": "/website-portfolio/index.html"
+    },
+    {
+      "source": "/website-portfolio/design",
+      "destination": "/website-portfolio/design/index.html"
+    }
   ]
 }
