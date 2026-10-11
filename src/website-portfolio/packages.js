@@ -7,7 +7,7 @@ export const PACKAGES = [
     name: 'Basic',
     price: 'Rp149.000',
     design: 'Template dari Jokoding',
-    designLink: { label: 'lihat template', href: '/website-portfolio/design' },
+    designLink: { label: 'Lihat template', href: '/website-portfolio/design' },
   },
   // Ditonjolkan atas pilihan owner: paket termurah yang sudah dapat copywriting dan optimasi LinkedIn.
   { id: 'pro', name: 'Pro', price: 'Rp299.000', design: 'Mengikuti desain PDF portfoliomu', recommended: true },
@@ -22,7 +22,6 @@ export const FEATURES = [
   { label: 'Domain .my.id 1 tahun', values: [true, true, true] },
   { label: 'Akses CV builder', values: [true, true, true], soon: true },
   { label: 'Tombol unduh CV di website', values: [true, true, true] },
-  { label: 'QR code di CV menuju website', values: [true, true, true] },
   { label: 'Didaftarkan ke Google Search Console', values: [true, true, true] },
   { label: 'Preview link saat dibagikan di WhatsApp dan LinkedIn', values: [true, true, true] },
   { label: 'Penulisan "Tentang Saya" dan deskripsi project', values: [false, true, true] },
@@ -35,11 +34,12 @@ export const ADD_ONS = [
   { label: 'Domain .com 1 tahun', price: 'Rp200.000' },
 ];
 
-export const waLink = ({ paket = '', domain = '' } = {}) => {
+export const waLink = ({ paket = '', domain = '', template = '' } = {}) => {
   const text = [
     'Halo kak, saya mau order website portfolio.',
     '',
     `Paket: ${paket}`,
+    ...(template ? [`Template: ${template}`] : []),
     `Alamat website yang diinginkan: ${domain}`,
     '',
     'Mohon dikirim form ordernya, terima kasih!',

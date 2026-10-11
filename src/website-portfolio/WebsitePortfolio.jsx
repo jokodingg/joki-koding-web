@@ -1,32 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'motion/react';
 import { Check, Minus, MessageCircle } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { PACKAGES, FEATURES, ADD_ONS, waLink } from './packages';
-
-// Fokus keyboard yang kelihatan di atas latar terang maupun gelap
-const focusRing =
-  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500';
-
-// Tombol sedikit naik saat hover, menandai elemen yang bisa diklik
-const lift = 'transition-[background-color,transform] duration-200 hover:-translate-y-0.5';
-
-const ease = [0.22, 1, 0.36, 1];
-
-// Blok muncul sekali saat masuk layar, supaya mata mengikuti urutan baca per section
-const Reveal = ({ as = 'div', delay = 0, y = 24, className = '', children }) => {
-  const Tag = motion[as];
-  return (
-    <Tag
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease, delay }}
-    >
-      {children}
-    </Tag>
-  );
-};
+import { focusRing, lift, ease, Reveal, navLinks, FOOTER_CTA, footerColumns } from './ui';
 
 // Urutan masuk hero: judul dulu, lalu kolom alamat sebagai titik interaksi
 const heroItem = {
@@ -47,35 +25,10 @@ const scrollTo = (id) => (e) => {
   e.preventDefault();
   const el = document.getElementById(id);
   if (!el) return;
-  const y = el.getBoundingClientRect().top + window.scrollY - 72;
+  const y = el.getBoundingClientRect().top + window.scrollY - 80;
   window.scrollTo({ top: y, behavior: 'smooth' });
   history.replaceState(null, '', `#${id}`);
 };
-
-const Header = () => (
-  <header className="sticky top-0 z-40 bg-[#f7f7f2] border-b border-gray-200">
-    <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
-      <a href="/" className={`shrink-0 flex items-center min-h-11 rounded ${focusRing}`} aria-label="Jokoding, kembali ke beranda">
-        <img src="/logo-jokoding-only.png" alt="" className="h-9 w-auto" />
-      </a>
-      <nav aria-label="Navigasi halaman" className="flex items-center gap-6">
-        <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
-          <li><a href="#kenapa" onClick={scrollTo('kenapa')} className={`inline-flex items-center min-h-11 hover:text-emerald-700 rounded ${focusRing}`}>Kenapa portfolio</a></li>
-          <li><a href="#paket" onClick={scrollTo('paket')} className={`inline-flex items-center min-h-11 hover:text-emerald-700 rounded ${focusRing}`}>Paket</a></li>
-          <li><a href="#order" onClick={scrollTo('order')} className={`inline-flex items-center min-h-11 hover:text-emerald-700 rounded ${focusRing}`}>Cara order</a></li>
-        </ul>
-        <a
-          href={waLink()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center min-h-11 px-5 rounded-xl bg-emerald-700 text-white text-sm font-semibold hover:bg-emerald-800 ${lift} ${focusRing}`}
-        >
-          Chat WhatsApp
-        </a>
-      </nav>
-    </div>
-  </header>
-);
 
 const DomainPreview = () => {
   const [name, setName] = useState('');
@@ -140,7 +93,7 @@ const DomainPreview = () => {
 };
 
 const Hero = () => (
-  <section className="container mx-auto px-4 pt-8 md:pt-12">
+  <section className="container mx-auto px-4 pt-28 md:pt-32">
     <div className="bg-gray-900 rounded-3xl px-6 py-10 md:p-14 grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-14 items-center">
       <motion.div
         initial="hidden"
@@ -185,7 +138,7 @@ const Hero = () => (
 );
 
 const Why = () => (
-  <section id="kenapa" className="container mx-auto px-4 py-20 md:py-28">
+  <section id="kenapa" className="scroll-mt-20 container mx-auto px-4 py-20 md:py-28">
     <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
       <Reveal as="h2" className="lg:col-span-5 text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
         CV cuma muat ringkasan. Portfolio menunjukkan hasil kerjanya.
@@ -211,7 +164,7 @@ const Why = () => (
           <div>
             <h3 className="font-semibold text-gray-900 mb-3">Tempat kamu menaruh linknya</h3>
             <ul className="space-y-2 text-gray-700">
-              <li>CV, lewat QR code yang kami buatkan</li>
+              <li>Bagian kontak di CV</li>
               <li>Profil LinkedIn</li>
               <li>Email dan form lamaran kerja</li>
             </ul>
@@ -261,16 +214,12 @@ const Design = ({ pkg }) => (
   <>
     {pkg.design}
     {pkg.designLink && (
-      <>
-        {' '}(
-        <a
-          href={pkg.designLink.href}
-          className={`underline underline-offset-4 decoration-2 text-emerald-700 hover:text-emerald-800 rounded ${focusRing}`}
-        >
-          {pkg.designLink.label}
-        </a>
-        )
-      </>
+      <a
+        href={pkg.designLink.href}
+        className={`block w-fit mt-1 underline underline-offset-4 decoration-2 text-emerald-700 hover:text-emerald-800 rounded ${focusRing}`}
+      >
+        {pkg.designLink.label}
+      </a>
     )}
   </>
 );
@@ -377,7 +326,7 @@ const PackageList = () => (
 );
 
 const Packages = () => (
-  <section id="paket" className="bg-white border-y border-gray-200 py-20 md:py-28">
+  <section id="paket" className="scroll-mt-20 bg-white border-y border-gray-200 py-20 md:py-28">
     <div className="container mx-auto px-4">
       <Reveal className="max-w-2xl mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Paket</h2>
@@ -425,7 +374,7 @@ const STEPS = [
 ];
 
 const HowToOrder = () => (
-  <section id="order" className="container mx-auto px-4 py-20 md:py-28">
+  <section id="order" className="scroll-mt-20 container mx-auto px-4 py-20 md:py-28">
     <Reveal as="h2" className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Cara order</Reveal>
     <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
       {STEPS.map((step, i) => (
@@ -446,51 +395,28 @@ const HowToOrder = () => (
   </section>
 );
 
-const Closing = () => (
-  <section className="container mx-auto px-4">
-    <Reveal className="bg-gray-900 rounded-3xl px-6 py-10 md:p-14 flex flex-col md:flex-row md:items-center justify-between gap-8">
-      <div>
-        <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-          Siapkan link portfoliomu sebelum lamaran berikutnya.
-        </h2>
-        <p className="mt-3 text-gray-300 text-lg">Belum yakin pilih paket mana? Tanya dulu, gratis.</p>
+const WebsitePortfolio = () => {
+  // Datang dari halaman lain lewat /website-portfolio#paket: section baru ada setelah React render, jadi scroll manual
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    const el = id && document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80 });
+  }, []);
+
+  return (
+    <MotionConfig reducedMotion="user">
+      <div className="bg-[#f7f7f2] min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <Navbar links={navLinks()} waHref={waLink()} />
+        <main>
+          <Hero />
+          <Why />
+          <Packages />
+          <HowToOrder />
+        </main>
+        <Footer cta={FOOTER_CTA} columns={footerColumns()} />
       </div>
-      <a
-        href={waLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`shrink-0 inline-flex items-center justify-center gap-2 min-h-12 px-7 rounded-xl bg-emerald-400 text-gray-900 font-semibold hover:bg-emerald-300 ${lift} ${focusRing}`}
-      >
-        <MessageCircle className="w-5 h-5" aria-hidden="true" />
-        Chat WhatsApp untuk order
-      </a>
-    </Reveal>
-  </section>
-);
-
-const Footer = () => (
-  <footer className="container mx-auto px-4 py-8 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-sm text-gray-600">
-    <p>&copy; {new Date().getFullYear()} Jokoding</p>
-    <a href="/" className={`inline-flex items-center min-h-11 hover:text-emerald-700 rounded ${focusRing}`}>
-      Layanan Jokoding lainnya di jokoding.id
-    </a>
-  </footer>
-);
-
-const WebsitePortfolio = () => (
-  <MotionConfig reducedMotion="user">
-    <div className="bg-[#f7f7f2] min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
-      <Header />
-      <main>
-        <Hero />
-        <Why />
-        <Packages />
-        <HowToOrder />
-        <Closing />
-      </main>
-      <Footer />
-    </div>
-  </MotionConfig>
-);
+    </MotionConfig>
+  );
+};
 
 export default WebsitePortfolio;

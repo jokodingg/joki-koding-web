@@ -3,10 +3,11 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
-// /website-portfolio (tanpa garis miring) diarahkan ke halamannya di dev & preview, sama seperti rewrite di vercel.json
+// /website-portfolio dan /website-portfolio/design (tanpa garis miring) diarahkan ke halamannya di dev & preview, sama seperti rewrite di vercel.json
 const websitePortfolioNoSlash = () => {
   const rewrite = (req, _res, next) => {
-    if (/^\/website-portfolio(\?|$)/.test(req.url)) req.url = req.url.replace('/website-portfolio', '/website-portfolio/')
+    const match = req.url.match(/^\/website-portfolio(\/design)?(\?.*)?$/)
+    if (match) req.url = `/website-portfolio${match[1] || ''}/${match[2] || ''}`
     next()
   }
   return {
@@ -27,6 +28,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         websitePortfolio: resolve(__dirname, 'website-portfolio/index.html'),
+        websitePortfolioDesign: resolve(__dirname, 'website-portfolio/design/index.html'),
       },
     },
   },
